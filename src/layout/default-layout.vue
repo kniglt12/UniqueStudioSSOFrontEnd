@@ -69,7 +69,8 @@ const menuWidth = computed(() => {
 .layout-content {
   min-height: 100vh;
   overflow-y: hidden;
-  background-color: var();
-  //transition: padding 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
+  // 不理解 var() 有什么用，但是它导致我编译失败了，注释掉
+  // background-color: var();
+  // transition: padding 0.2s cubic-bezier(0.34, 0.69, 0.1, 1);
 }
 </style>
