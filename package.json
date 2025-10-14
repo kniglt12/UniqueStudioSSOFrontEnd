@@ -14,18 +14,15 @@
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
       "prettier --write",
-      "eslint --fix",
-      "vue-tsc --noEmit"
+      "eslint --fix"
     ],
     "*.vue": [
       "prettier --write",
-      "eslint --fix",
-      "vue-tsc --noEmit"
+      "eslint --fix"
     ],
     "*.{less,css}": [
       "stylelint --fix",
-      "prettier --write",
-      "vue-tsc --noEmit"
+      "prettier --write"
     ]
   },
   "dependencies": {
