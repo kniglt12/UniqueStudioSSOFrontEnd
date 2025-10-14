@@ -59,6 +59,7 @@ jobs:
             # 在远程服务器上执行的命令
             cd ~
             date >> ations.log
-            rm -r /home/src/tmphr/*
-            mv ~/tmphr/* /home/src/tmphr/*
+            rm -r /home/srv/tmphr/*
+            mv ~/tmphr/* /home/srv/tmphr/
+            chgrp www-data -R /home/srv/tmphr/*
             # ... 其他部署命令 ...
