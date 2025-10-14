@@ -43,9 +43,10 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: ${{ secrets.SSH_PORT }}
           source: "dist/*"  # Vue默认输出目录,根据实际情况调整
-          target: "/home/srv/tmphr"  # 服务器目标路径
+          target: "/home/gh_ations_hr/tmphr"  # 服务器目标路径
           strip_components: 1  # 移除dist/前缀
           overwrite: true
+          rm: true
 
       - name: Deploy to Server
         uses: appleboy/ssh-action@v1
@@ -58,4 +59,6 @@ jobs:
             # 在远程服务器上执行的命令
             cd ~
             date >> ations.log
+            rm -r /home/src/tmphr/*
+            mv ~/tmphr/* /home/src/tmphr/*
             # ... 其他部署命令 ...
