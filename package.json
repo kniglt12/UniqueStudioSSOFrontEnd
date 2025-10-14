@@ -5,23 +5,27 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host=0.0.0.0 --config ./config/vite.config.dev.ts",
-    "build": "vue-tsc && vite build --config ./config/vite.config.base.ts",
+    "build": "vite build --config ./config/vite.config.base.ts",
     "preview": "vite preview",
     "lint-staged": "npx lint-staged",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "type-check": "vue-tsc --noEmit"
   },
   "lint-staged": {
     "*.{js,ts,jsx,tsx}": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "vue-tsc --noEmit"
     ],
     "*.vue": [
       "prettier --write",
-      "eslint --fix"
+      "eslint --fix",
+      "vue-tsc --noEmit"
     ],
     "*.{less,css}": [
       "stylelint --fix",
-      "prettier --write"
+      "prettier --write",
+      "vue-tsc --noEmit"
     ]
   },
   "dependencies": {
