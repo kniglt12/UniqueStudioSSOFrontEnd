@@ -1,3 +1,4 @@
+import { throttle } from 'lodash';
 import { ref, computed, onMounted, onUnmounted } from 'vue';
 
 type WidthType = 'sm' | 'md' | 'lg';
@@ -6,10 +7,17 @@ type HeightType = 'sm' | 'md' | 'lg';
 export default function useWindowResize() {
   const width = ref(window.innerWidth);
   const height = ref(window.innerHeight);
-  const handleResize = () => {
-    width.value = window.innerWidth;
-    height.value = window.innerHeight;
-  };
+  const handleResize = throttle(
+    () => {
+      width.value = window.innerWidth;
+      height.value = window.innerHeight;
+    },
+    500,
+    {
+      trailing: true,
+      leading: false,
+    },
+  );
   const widthType = computed((): WidthType => {
     return width.value <= 640 ? 'sm' : width.value <= 960 ? 'md' : 'lg';
   });

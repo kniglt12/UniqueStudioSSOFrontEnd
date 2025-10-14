@@ -37,7 +37,11 @@
         </div>
       </div>
     </div>
-    <div class="hidden sm:flex sm:w-full">
+    <div v-if="widthType === 'sm'">
+      <group-pie-chart-sm :counts="allGroupMemberCounts"></group-pie-chart-sm>
+      <recruitment-pie-chart-sm></recruitment-pie-chart-sm>
+    </div>
+    <div v-else class="flex w-full">
       <div class="w-1/2">
         <group-pie-chart :counts="allGroupMemberCounts"></group-pie-chart>
       </div>
@@ -45,20 +49,19 @@
         <recruitment-pie-chart></recruitment-pie-chart>
       </div>
     </div>
-    <div class="sm:hidden">
-      <group-pie-chart-sm :counts="allGroupMemberCounts"></group-pie-chart-sm>
-      <recruitment-pie-chart-sm></recruitment-pie-chart-sm>
-    </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue';
 import useRecruitmentStore from '@/store/modules/recruitment';
+import useWindowResize from '@/hooks/resize';
 import groupPieChart from './charts/group-pie-chart.vue';
 import recruitmentPieChart from './charts/recruitment-pie-chart.vue';
 import groupPieChartSm from './charts/group-pie-chart-sm.vue';
 import recruitmentPieChartSm from './charts/recruitment-pie-chart-sm.vue';
+
+const { widthType } = useWindowResize();
 
 const recStore = useRecruitmentStore();
 
