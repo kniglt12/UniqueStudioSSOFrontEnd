@@ -100,7 +100,7 @@
   </a-modal>
   <notification-modal
     v-if="curStep <= recruitSteps.length"
-    v-model:showNotify="showNotify"
+    v-model:show-notify="showNotify"
     :candidates="props.candidates"
     :cur-step="props.curStep"
     :group="props.group"
