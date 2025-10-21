@@ -1,5 +1,4 @@
-export const HR_DOMAIN_BE: string =
-  'https://dev.back.recruitment2023.hustunique.com';
+export const HR_DOMAIN_BE: string = import.meta.env.VITE_HR_DOMAIN_BE;
 
 export const HR_DOMAIN_FE: string = 'hr2024.hustunique.com';
 
