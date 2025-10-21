@@ -48,8 +48,8 @@
     </div>
     <a-divider class="hidden sm:block" />
     <candidate-info
-      v-model:curStep="currentStep"
-      v-model:currentGroup="currentGroup"
+      v-model:cur-step="currentStep"
+      v-model:current-group="currentGroup"
     ></candidate-info>
   </div>
 </template>

@@ -90,7 +90,7 @@
         </div>
 
         <a-table
-          v-model:selectedKeys="selectedKeys"
+          v-model:selected-keys="selectedKeys"
           row-key="aid"
           :data="data"
           :row-selection="{
@@ -173,7 +173,7 @@
   />
 
   <notification-modal
-    v-model:showNotify="showNotify"
+    v-model:show-notify="showNotify"
     :candidates="selectData"
     :cur-step="interviewType === InterviewType.Group ? 2 : 5"
     :rec-name="recStore.currentRec?.name ?? ''"
@@ -183,7 +183,7 @@
   <!-- 发送通知弹窗 -->
 
   <allowcate-modal
-    v-model:showAllowcate="showAllowcate"
+    v-model:show-allowcate="showAllowcate"
     :application-id="allowcateApplicationId"
     :interview-type="interviewType === InterviewType.Team ? 'team' : 'group'"
     :current-group="currentGroup"
