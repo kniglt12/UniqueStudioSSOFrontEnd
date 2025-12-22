@@ -29,7 +29,6 @@
     "@arco-design/web-vue": "^2.57.0",
     "axios": "^1.12.2",
     "dayjs": "^1.11.18",
-    "default-passive-events": "^4.0.0",
     "echarts": "^5.6.0",
     "http-proxy-middleware": "^2.0.9",
     "lodash": "^4.17.21",

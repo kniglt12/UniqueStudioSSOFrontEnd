@@ -8,9 +8,6 @@ import App from './App.vue';
 // 手动导入，防止由于插件导致全局css顺序不同，使dev和build模式下样式不完全相同
 import '@arco-design/web-vue/es/style/index.less';
 import './styles/tailwind.css';
-// 解决 chrome 的性能 waring,默认不阻止滑动事件
-// 参考 https://www.chromestatus.com/feature/5745543795965952
-import 'default-passive-events';
 
 // 全量引入样式
 // import '@arco-design/web-vue/dist/arco.css';
