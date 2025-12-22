@@ -29,10 +29,21 @@
               <a-button
                 type="text"
                 class="w-32 text-base font-normal"
-                @click="visible = true"
+                @click="showCreateModel = true"
               >
                 <IconPlus class="mr-2" />{{
                   $t(`common.operation.createRecruitment`)
+                }}
+              </a-button>
+            </div>
+            <div class="py-1 text-center">
+              <a-button
+                type="text"
+                class="w-32 text-base font-normal"
+                @click="showUpdateModel = true"
+              >
+                <IconSettings class="mr-2" />{{
+                  $t(`common.operation.updateRecruitment`)
                 }}
               </a-button>
             </div>
@@ -123,14 +134,18 @@
 
     <!--发起招新的模态框-->
     <create-newrec-modal
-      v-model:visible="visible"
+      v-model:visible="showCreateModel"
       @recruitment-created="handleRecruitmentCreated"
     />
+
+    <!--更新招新的模态框-->
+    <update-rec-modal v-model:visible="showUpdateModel" />
   </div>
 </template>
 
 <script setup lang="ts">
 import CreateNewrecModal from '@/components/navbar/components/create-newrec-modal.vue';
+import UpdateRecModal from '@/components/navbar/components/update-rec-modal.vue';
 import LogoSVG from '@/assets/svg/logo.svg';
 import useRecruitmentStore from '@/store/modules/recruitment';
 import useUserStore from '@/store/modules/user';
@@ -175,7 +190,8 @@ const changeDayNight = () => {
   }
 };
 
-const visible = ref(false);
+const showCreateModel = ref(false);
+const showUpdateModel = ref(false);
 const isMenuVisible = ref(false);
 
 const handleVisibleChange = (menuVisible: boolean) => {
