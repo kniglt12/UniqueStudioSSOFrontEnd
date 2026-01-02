@@ -57,6 +57,7 @@ export default {
 
   'common.user.phone': '手机号码',
   'common.user.email': '邮箱',
+  'common.user.qq': 'QQ',
   'common.user.gender': '性别',
   'common.user.undefined': '未知',
   'common.user.gender.male': '男',

@@ -22,6 +22,12 @@
             user?.email ?? ''
           }}</span>
         </div>
+        <div class="sm:hidden flex items-center">
+          <icon-qq />
+          <span class="ml-2.5 w-52 overflow-x-auto">{{
+            user?.qq_account ?? ''
+          }}</span>
+        </div>
       </div>
     </div>
 
@@ -57,6 +63,22 @@
           }}</a-scrollbar>
         </div>
       </div>
+
+      <div class="flex gap-4">
+        <div
+          class="w-9 h-9 rounded-full flex justify-center items-center bg-[rgb(var(--gray-2))] shrink-0"
+        >
+          <icon-qq :size="20" width="20" height="20" />
+        </div>
+        <div>
+          <div class="text-[--color-text-3]">
+            {{ $t('common.user.qq') }}
+          </div>
+          <a-scrollbar class="overflow-x-auto" outer-class="w-44 pb-2">{{
+            user?.qq_account ?? ''
+          }}</a-scrollbar>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +86,7 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import useApplicationStore from '@/store/modules/application';
+import IconQq from '@/assets/svg/qq-outline.svg';
 
 const applyStore = useApplicationStore();
 const user = computed(() => applyStore.data?.user_detail);

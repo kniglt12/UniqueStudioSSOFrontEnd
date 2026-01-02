@@ -13,6 +13,7 @@ interface UserDetail {
   join_time: string;
   groups: Group[];
   lark_union_id: string;
+  qq_account?: string;
 }
 
 export interface Application {
